@@ -52,22 +52,22 @@ const Contact = () => {
                 <div className="space-y-4">
                   <div>
                     <div className="text-purple-400 font-medium mb-1">Email</div>
-                    <a href="mailto:alex@creativecoder.dev" className="text-gray-300 hover:text-white transition-colors">
-                      alex@creativecoder.dev
+                    <a href="mailto:aman4191729@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                      aman4191729@gmail.com
                     </a>
                   </div>
                   
                   <div>
                     <div className="text-purple-400 font-medium mb-1">Phone</div>
-                    <a href="tel:+14155557890" className="text-gray-300 hover:text-white transition-colors">
-                      +1 (415) 555-7890
+                    <a href="tel:+919555438708" className="text-gray-300 hover:text-white transition-colors">
+                      +91 9555438708
                     </a>
                   </div>
                   
                   <div>
                     <div className="text-purple-400 font-medium mb-1">Location</div>
                     <p className="text-gray-300">
-                      San Francisco, CA, United States
+                      Dehradun, Uttarakhand, India
                     </p>
                   </div>
                 </div>
@@ -77,15 +77,26 @@ const Contact = () => {
                 <h3 className="text-xl font-display font-bold text-white mb-4">Social Links</h3>
                 
                 <div className="flex gap-4">
-                  {['GitHub', 'LinkedIn', 'Twitter', 'Instagram'].map((platform) => (
-                    <a 
-                      key={platform}
-                      href="#" 
-                      className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-purple-500 hover:text-white transition-all"
-                    >
-                      {platform.charAt(0)}
-                    </a>
-                  ))}
+                  <a 
+                    href="https://www.linkedin.com/in/aman-pokhariya-014ba0290"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-purple-500 hover:text-white transition-all"
+                  >
+                    L
+                  </a>
+                  <a 
+                    href="#" 
+                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-purple-500 hover:text-white transition-all"
+                  >
+                    G
+                  </a>
+                  <a 
+                    href="#" 
+                    className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-300 hover:bg-purple-500 hover:text-white transition-all"
+                  >
+                    T
+                  </a>
                 </div>
               </div>
             </div>

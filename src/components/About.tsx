@@ -18,7 +18,7 @@ const About = () => {
               
               <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-purple-500/20 backdrop-blur-sm rounded-2xl border border-white/10 p-4 flex items-center justify-center">
                 <p className="font-display text-white text-lg">
-                  <span className="block font-bold text-3xl">7+</span>
+                  <span className="block font-bold text-3xl">1+</span>
                   Years Experience
                 </p>
               </div>
@@ -33,10 +33,10 @@ const About = () => {
               
               <div className="space-y-4 text-gray-300 mb-8">
                 <p>
-                  Hello! I'm Alex, a passionate full stack developer and UI/UX designer with an eye for creating beautiful, functional websites and applications.
+                  Hello! I'm Aman, a passionate web developer with an eye for creating beautiful, functional websites and applications.
                 </p>
                 <p>
-                  With over 7 years of experience in the industry, I've worked with clients ranging from startups to enterprise companies, helping them achieve their digital goals through thoughtful design and clean code.
+                  With 1 year of experience in the industry, I've worked with various clients, helping them achieve their digital goals through thoughtful design and clean code.
                 </p>
                 <p>
                   My approach to development focuses on user experience while maintaining modern aesthetics and performance. I believe in creating solutions that not only look great but also serve their purpose effectively.
@@ -46,15 +46,15 @@ const About = () => {
               <div className="grid grid-cols-2 gap-4 mb-8">
                 <div>
                   <h3 className="text-white font-display font-bold text-xl mb-2">Name</h3>
-                  <p className="text-gray-400">Alex Parker</p>
+                  <p className="text-gray-400">Aman Pokhariya</p>
                 </div>
                 <div>
                   <h3 className="text-white font-display font-bold text-xl mb-2">Email</h3>
-                  <p className="text-gray-400">alex@creativecoder.dev</p>
+                  <p className="text-gray-400">aman4191729@gmail.com</p>
                 </div>
                 <div>
                   <h3 className="text-white font-display font-bold text-xl mb-2">Location</h3>
-                  <p className="text-gray-400">San Francisco, USA</p>
+                  <p className="text-gray-400">Dehradun, Uttarakhand</p>
                 </div>
                 <div>
                   <h3 className="text-white font-display font-bold text-xl mb-2">Availability</h3>
