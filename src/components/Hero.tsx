@@ -8,7 +8,7 @@ const Hero = () => {
   useEffect(() => {
     // Simple typing effect
     if (titleRef.current) {
-      const text = "Hi, I'm John Doe";
+      const text = "Hi, I'm Alex Parker";
       titleRef.current.innerText = "";
       
       let i = 0;
@@ -39,16 +39,16 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-purple-400 font-display mb-4 text-xl md:text-2xl tracking-wider">
-            Web Developer & Designer
+            Full Stack Developer & UI/UX Designer
           </h2>
           
           <h1 ref={titleRef} className="text-white font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Hi, I'm John Doe
+            Hi, I'm Alex Parker
           </h1>
           
           <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed">
-            I create stunning digital experiences with clean code and creative design.
-            Specializing in interactive web applications and beautiful user interfaces.
+            I craft engaging digital experiences with modern code and innovative design.
+            Expert in building responsive web applications with exceptional user interfaces.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">

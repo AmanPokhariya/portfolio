@@ -52,22 +52,22 @@ const Contact = () => {
                 <div className="space-y-4">
                   <div>
                     <div className="text-purple-400 font-medium mb-1">Email</div>
-                    <a href="mailto:john@example.com" className="text-gray-300 hover:text-white transition-colors">
-                      john@example.com
+                    <a href="mailto:alex@creativecoder.dev" className="text-gray-300 hover:text-white transition-colors">
+                      alex@creativecoder.dev
                     </a>
                   </div>
                   
                   <div>
                     <div className="text-purple-400 font-medium mb-1">Phone</div>
-                    <a href="tel:+12345678901" className="text-gray-300 hover:text-white transition-colors">
-                      +1 (234) 567-8901
+                    <a href="tel:+14155557890" className="text-gray-300 hover:text-white transition-colors">
+                      +1 (415) 555-7890
                     </a>
                   </div>
                   
                   <div>
                     <div className="text-purple-400 font-medium mb-1">Location</div>
                     <p className="text-gray-300">
-                      New York, NY, United States
+                      San Francisco, CA, United States
                     </p>
                   </div>
                 </div>

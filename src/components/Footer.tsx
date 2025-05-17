@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h2 className="text-white font-display text-2xl font-bold">
-              Portfolio<span className="text-purple-500">.</span>
+              Alex<span className="text-purple-500">Parker</span>
             </h2>
             <p className="text-gray-400 mt-2 max-w-md">
               Creating beautiful web experiences through design and development.
@@ -30,7 +30,7 @@ const Footer = () => {
         
         <div className="border-t border-white/5 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            &copy; {currentYear} John Doe. All rights reserved.
+            &copy; {currentYear} Alex Parker. All rights reserved.
           </p>
           
           <div className="flex gap-6 mt-4 md:mt-0">
