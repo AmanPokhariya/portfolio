@@ -1,7 +1,15 @@
-
 import CreativeButton from './CreativeButton';
 
 const About = () => {
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/AMAN.CV.pdf';
+    link.download = 'AMAN.CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="about" className="py-20">
       <div className="container mx-auto px-4">
@@ -62,7 +70,7 @@ const About = () => {
                 </div>
               </div>
               
-              <CreativeButton>Download Resume</CreativeButton>
+              <CreativeButton onClick={downloadResume}>Download Resume</CreativeButton>
             </div>
           </div>
         </div>

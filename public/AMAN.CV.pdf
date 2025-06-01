@@ -1,0 +1,135 @@
+
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Contents 4 0 R
+/Resources <<
+  /Font <<
+    /F1 5 0 R
+  >>
+>>
+>>
+endobj
+4 0 obj
+<<
+/Length 2500
+>>
+stream
+BT
+/F1 12 Tf
+50 750 Td
+(Aman Pokhriya) Tj
+0 -20 Td
+(Email-id : aman4191729@gmail.com) Tj
+0 -15 Td
+(Mobile No.: 9555438708) Tj
+0 -15 Td
+(https://github.com/amanpokhariya) Tj
+0 -30 Td
+/F1 14 Tf
+(ACADEMIC DETAILS) Tj
+0 -25 Td
+/F1 10 Tf
+(Year                    Degree/Exam                    Institute                           GPA/Marks\(%\)) Tj
+0 -15 Td
+(2022 - Present B.TECH in Computer Science    Graphic Era University Dehradun    7.14/10.0) Tj
+0 -15 Td
+(2022                   C.B.S.E                        K.V.Manauri                        89.00%) Tj
+0 -15 Td
+(2020                   C.B.S.E                        K.V.Manauri                        81.00%) Tj
+0 -30 Td
+/F1 14 Tf
+(PROJECTS) Tj
+0 -20 Td
+/F1 10 Tf
+(• ChatBot For GEHU \(Dec, 2023 - Jan, 2024\) : Developed a chatbot which will answer queries related to) Tj
+0 -12 Td
+(  Graphic Era University. Technologies Used-HTML,CSS,JS) Tj
+0 -18 Td
+(• Text-to-Speech and Speech-to-Text \(April,2024 - May, 2024\) : Developed a Python application that utilizes) Tj
+0 -12 Td
+(  speech recognition and text-to-speech libraries to convert spoken words into text and vice versa,incorporating) Tj
+0 -12 Td
+(  logging for enhanced debugging and user feedback.Technologies Used-Python) Tj
+0 -18 Td
+(• Market Basket Analysis \(Nov, 2024 - Dec, 2024\) : Market Basket Analysis is a data mining technique used) Tj
+0 -12 Td
+(  to identify patterns and relationships in customer transactions, helping businesses understand which prod-) Tj
+0 -12 Td
+(  ucts are frequently bought together. It aids in optimizing product placement, promotions, and inventory) Tj
+0 -12 Td
+(  management.Technologies Used-Python. Precision-0.1660,Accuracy-16.60) Tj
+0 -30 Td
+/F1 14 Tf
+(TECHNICAL SKILLS) Tj
+0 -20 Td
+/F1 10 Tf
+(• Languages Python , Java , C , C++ , HTML, CSS, JavaScript.) Tj
+0 -18 Td
+(• Database Tools Oracle,MYSQL) Tj
+0 -18 Td
+(• Machine Learning Tools MLxtend) Tj
+0 -30 Td
+/F1 14 Tf
+(SCHOLASTIC ACHIEVEMENTS) Tj
+0 -20 Td
+/F1 10 Tf
+(• Certificate From HackerRank - Scored Silver Level Badge and Certificate in Java.) Tj
+0 -15 Td
+(• LeetCode Achivements- Solved over 130 questions on leetcode, also achieved a 100days badge from leet-) Tj
+0 -12 Td
+(  code.) Tj
+0 -25 Td
+/F1 14 Tf
+(POSITIONS OF RESPONSIBILITY) Tj
+0 -20 Td
+/F1 10 Tf
+(• Event Management Experience Successfully managed the Paradox concert with my team on Feb 9) Tj
+0 -12 Td
+(  2025, at Mall of Dehradun, overseeing logistics, coordination, and execution.) Tj
+0 -15 Td
+(• Organising Member of Discipline Committee -Managed events like freshers celebration,sports etc main-) Tj
+0 -12 Td
+(  taining the decorum of the University.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000053 00000 n 
+0000000102 00000 n 
+0000000273 00000 n 
+0000002825 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+2893
+%%EOF
