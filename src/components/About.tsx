@@ -10,8 +10,8 @@ const About = () => {
             <div className="relative">
               <div className="aspect-square rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-white/10 shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1596075780750-81249df16d19?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3"
-                  alt="Profile" 
+                  src="/lovable-uploads/8353d403-2863-457c-af9a-344068c9fca4.png"
+                  alt="Aman Pokhariya" 
                   className="w-full h-full object-cover"
                 />
               </div>
