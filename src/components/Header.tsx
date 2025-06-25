@@ -1,13 +1,26 @@
 
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // If we're not on the home page, navigate to home first
+    if (window.location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMenuOpen(false);
   };
@@ -17,9 +30,9 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <h1 className="text-white font-display text-xl font-bold">
+            <Link to="/" className="text-white font-display text-xl font-bold">
               Aman<span className="text-purple-500">Pokhariya</span>
-            </h1>
+            </Link>
           </div>
           
           <nav className="hidden md:flex space-x-8">
@@ -29,12 +42,12 @@ const Header = () => {
             >
               Home
             </button>
-            <button 
-              onClick={() => scrollToSection('video-intro')}
+            <Link 
+              to="/videos"
               className="text-gray-300 hover:text-white transition-colors"
             >
-              Video
-            </button>
+              Videos
+            </Link>
             <button 
               onClick={() => scrollToSection('about')}
               className="text-gray-300 hover:text-white transition-colors"
@@ -80,12 +93,13 @@ const Header = () => {
               >
                 Home
               </button>
-              <button 
-                onClick={() => scrollToSection('video-intro')}
+              <Link 
+                to="/videos"
                 className="text-gray-300 hover:text-white transition-colors text-left"
+                onClick={() => setIsMenuOpen(false)}
               >
-                Video
-              </button>
+                Videos
+              </Link>
               <button 
                 onClick={() => scrollToSection('about')}
                 className="text-gray-300 hover:text-white transition-colors text-left"
