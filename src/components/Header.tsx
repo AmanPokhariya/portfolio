@@ -1,126 +1,119 @@
 
-import { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
-import CreativeButton from './CreativeButton';
+import { useState } from 'react';
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setMobileMenuOpen(false);
+    setIsMenuOpen(false);
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/50 backdrop-blur-lg py-4' : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#home" className="text-white font-display text-2xl font-bold">
-          Aman<span className="text-purple-500">Pokhariya</span>
-        </a>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          <a 
-            onClick={() => scrollToSection('home')}
-            className="text-white hover:text-purple-400 transition-colors cursor-pointer"
-          >
-            Home
-          </a>
-          <a 
-            onClick={() => scrollToSection('about')}
-            className="text-white hover:text-purple-400 transition-colors cursor-pointer"
-          >
-            About
-          </a>
-          <a 
-            onClick={() => scrollToSection('projects')}
-            className="text-white hover:text-purple-400 transition-colors cursor-pointer"
-          >
-            Projects
-          </a>
-          <a 
-            onClick={() => scrollToSection('skills')}
-            className="text-white hover:text-purple-400 transition-colors cursor-pointer"
-          >
-            Skills
-          </a>
-          <CreativeButton 
-            onClick={() => scrollToSection('contact')}
-            className="ml-4"
-          >
-            Contact Me
-          </CreativeButton>
-        </nav>
-
-        {/* Mobile Menu Button */}
-        <button 
-          className="md:hidden text-white"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <Menu size={24} />
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-black/90 backdrop-blur-lg absolute top-full left-0 w-full">
-          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-            <a 
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-white/10">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <h1 className="text-white font-display text-xl font-bold">
+              Aman<span className="text-purple-500">Pokhariya</span>
+            </h1>
+          </div>
+          
+          <nav className="hidden md:flex space-x-8">
+            <button 
               onClick={() => scrollToSection('home')}
-              className="text-white hover:text-purple-400 transition-colors py-2 cursor-pointer"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               Home
-            </a>
-            <a 
+            </button>
+            <button 
+              onClick={() => scrollToSection('video-intro')}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Video
+            </button>
+            <button 
               onClick={() => scrollToSection('about')}
-              className="text-white hover:text-purple-400 transition-colors py-2 cursor-pointer"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               About
-            </a>
-            <a 
+            </button>
+            <button 
               onClick={() => scrollToSection('projects')}
-              className="text-white hover:text-purple-400 transition-colors py-2 cursor-pointer"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               Projects
-            </a>
-            <a 
+            </button>
+            <button 
               onClick={() => scrollToSection('skills')}
-              className="text-white hover:text-purple-400 transition-colors py-2 cursor-pointer"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               Skills
-            </a>
-            <a 
+            </button>
+            <button 
               onClick={() => scrollToSection('contact')}
-              className="text-white hover:text-purple-400 transition-colors py-2 cursor-pointer"
+              className="text-gray-300 hover:text-white transition-colors"
             >
               Contact
-            </a>
-          </div>
+            </button>
+          </nav>
+          
+          <button 
+            className="md:hidden text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
-      )}
+        
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t border-white/10">
+            <nav className="flex flex-col space-y-4">
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => scrollToSection('video-intro')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                Video
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => scrollToSection('projects')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                Projects
+              </button>
+              <button 
+                onClick={() => scrollToSection('skills')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                Skills
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="text-gray-300 hover:text-white transition-colors text-left"
+              >
+                Contact
+              </button>
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   );
 };
