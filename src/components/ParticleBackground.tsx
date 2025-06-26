@@ -8,117 +8,81 @@ declare global {
 }
 
 const ParticleBackground = () => {
-  const particlesInitialized = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!particlesInitialized.current && window.particlesJS) {
-      particlesInitialized.current = true;
-      
-      window.particlesJS('particles-js', {
-        particles: {
-          number: {
-            value: 80,
-            density: {
-              enable: true,
-              value_area: 800
-            }
-          },
-          color: {
-            value: "#ffffff"
-          },
-          shape: {
-            type: "circle",
-            stroke: {
-              width: 0,
-              color: "#000000"
-            },
-          },
-          opacity: {
-            value: 0.5,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.1,
-              sync: false
-            }
-          },
-          size: {
-            value: 3,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 2,
-              size_min: 0.1,
-              sync: false
-            }
-          },
-          line_linked: {
-            enable: true,
-            distance: 150,
-            color: "#9b87f5",
-            opacity: 0.4,
-            width: 1
-          },
-          move: {
-            enable: true,
-            speed: 1,
-            direction: "none",
-            random: false,
-            straight: false,
-            out_mode: "out",
-            bounce: false,
-            attract: {
-              enable: false,
-              rotateX: 600,
-              rotateY: 1200
-            }
-          }
-        },
-        interactivity: {
-          detect_on: "canvas",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "grab"
-            },
-            onclick: {
-              enable: true,
-              mode: "push"
-            },
-            resize: true
-          },
-          modes: {
-            grab: {
-              distance: 140,
+    // Add a small delay to ensure DOM is ready
+    const timer = setTimeout(() => {
+      if (containerRef.current && typeof window !== 'undefined' && window.particlesJS) {
+        try {
+          window.particlesJS('particles-js', {
+            particles: {
+              number: {
+                value: 50,
+                density: {
+                  enable: true,
+                  value_area: 800
+                }
+              },
+              color: {
+                value: '#ffffff'
+              },
+              shape: {
+                type: 'circle'
+              },
+              opacity: {
+                value: 0.5,
+                random: false
+              },
+              size: {
+                value: 3,
+                random: true
+              },
               line_linked: {
-                opacity: 1
+                enable: true,
+                distance: 150,
+                color: '#ffffff',
+                opacity: 0.4,
+                width: 1
+              },
+              move: {
+                enable: true,
+                speed: 6,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
               }
             },
-            bubble: {
-              distance: 400,
-              size: 40,
-              duration: 2,
-              opacity: 8,
+            interactivity: {
+              detect_on: 'canvas',
+              events: {
+                onhover: {
+                  enable: true,
+                  mode: 'repulse'
+                },
+                onclick: {
+                  enable: true,
+                  mode: 'push'
+                },
+                resize: true
+              }
             },
-            repulse: {
-              distance: 200,
-              duration: 0.4
-            },
-            push: {
-              particles_nb: 4
-            },
-            remove: {
-              particles_nb: 2
-            }
-          }
-        },
-        retina_detect: true
-      });
-    }
+            retina_detect: true
+          });
+        } catch (error) {
+          console.log('Particles.js initialization failed:', error);
+        }
+      }
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+    };
   }, []);
 
-  return <div id="particles-js" className="fixed inset-0 z-[-1]" />;
+  return <div ref={containerRef} id="particles-js" className="absolute inset-0 z-0"></div>;
 };
 
 export default ParticleBackground;
