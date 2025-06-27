@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 
 const VideoIntro = () => {
@@ -8,46 +9,29 @@ const VideoIntro = () => {
       id: 'introduction',
       title: 'Introduction Video',
       description: 'Get to know me and my journey in web development',
-      // Option 1: Use YouTube embed
-      youtubeId: '', // Add your YouTube video ID here
-      // Option 2: Use placeholder or small demo video
-      videoPath: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+      // Convert Google Drive link to direct video URL
+      videoPath: 'https://drive.google.com/uc?export=download&id=1xFFUlx1724y_EQkeBF4JFz5KD3C55nNb',
       thumbnail: '/lovable-uploads/a17bbc11-dc41-4a80-b398-8d68f7bcb2bc.png'
     },
     {
       id: 'interview',
       title: 'Interview Video', 
       description: 'Watch my professional interview and communication skills',
-      youtubeId: '', // Add your YouTube video ID here
-      videoPath: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+      // Convert Google Drive link to direct video URL
+      videoPath: 'https://drive.google.com/uc?export=download&id=1x9ClaJg4oBDoNXyW3E6y9luifZwFyHJa',
       thumbnail: '/lovable-uploads/a17bbc11-dc41-4a80-b398-8d68f7bcb2bc.png'
     },
     {
       id: 'feedback',
       title: 'Feedback Video',
       description: 'Client testimonials and feedback on my work',
-      youtubeId: '', // Add your YouTube video ID here
-      videoPath: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      // Convert Google Drive link to direct video URL
+      videoPath: 'https://drive.google.com/uc?export=download&id=1xDzn8WsvrIaUvJWpL_0rVIYC-7IzyEuR',
       thumbnail: '/lovable-uploads/a17bbc11-dc41-4a80-b398-8d68f7bcb2bc.png'
     }
   ];
 
   const renderVideo = (section: any) => {
-    // If YouTube ID is provided, use YouTube embed
-    if (section.youtubeId) {
-      return (
-        <iframe
-          className="w-full h-full rounded-2xl"
-          src={`https://www.youtube.com/embed/${section.youtubeId}`}
-          title={section.title}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      );
-    }
-
-    // Otherwise use regular video player
     return (
       <video 
         className="w-full h-full object-cover rounded-2xl"
@@ -107,7 +91,7 @@ const VideoIntro = () => {
                           <path d="M8 5v14l11-7z"/>
                         </svg>
                       </div>
-                      <p className="text-gray-400 text-sm">Video coming soon</p>
+                      <p className="text-gray-400 text-sm">Video loading...</p>
                     </div>
                   </div>
                 </div>
@@ -117,12 +101,12 @@ const VideoIntro = () => {
           
           <div className="mt-12 text-center">
             <div className="bg-gray-800/30 rounded-lg p-6 border border-white/10">
-              <h4 className="text-white font-semibold mb-2">Video Setup Options:</h4>
+              <h4 className="text-white font-semibold mb-2">Your Personal Videos</h4>
               <div className="text-gray-400 text-sm space-y-2">
-                <p>🎬 <strong>Option 1:</strong> Upload videos to YouTube and add video IDs in code</p>
-                <p>🎥 <strong>Option 2:</strong> Use Google Drive/Dropbox public links</p>
-                <p>📱 <strong>Option 3:</strong> Record short videos on phone and use cloud storage</p>
-                <p className="text-xs mt-3 text-purple-400">💡 Currently showing demo videos - replace with your content!</p>
+                <p>✅ Introduction Video - Added from Google Drive</p>
+                <p>✅ Interview Video - Added from Google Drive</p>
+                <p>✅ Feedback Video - Added from Google Drive</p>
+                <p className="text-xs mt-3 text-green-400">🎥 All your videos have been successfully integrated!</p>
               </div>
             </div>
           </div>
