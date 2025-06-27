@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 const VideoIntro = () => {
@@ -9,24 +8,67 @@ const VideoIntro = () => {
       id: 'introduction',
       title: 'Introduction Video',
       description: 'Get to know me and my journey in web development',
-      videoPath: '/introduction-video.mp4',
-      thumbnail: '/introduction-thumbnail.jpg' // optional thumbnail
+      // Option 1: Use YouTube embed
+      youtubeId: '', // Add your YouTube video ID here
+      // Option 2: Use placeholder or small demo video
+      videoPath: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+      thumbnail: '/lovable-uploads/a17bbc11-dc41-4a80-b398-8d68f7bcb2bc.png'
     },
     {
       id: 'interview',
-      title: 'Interview Video',
+      title: 'Interview Video', 
       description: 'Watch my professional interview and communication skills',
-      videoPath: '/interview-video.mp4',
-      thumbnail: '/interview-thumbnail.jpg' // optional thumbnail
+      youtubeId: '', // Add your YouTube video ID here
+      videoPath: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4',
+      thumbnail: '/lovable-uploads/a17bbc11-dc41-4a80-b398-8d68f7bcb2bc.png'
     },
     {
       id: 'feedback',
       title: 'Feedback Video',
       description: 'Client testimonials and feedback on my work',
-      videoPath: '/feedback-video.mp4',
-      thumbnail: '/feedback-thumbnail.jpg' // optional thumbnail
+      youtubeId: '', // Add your YouTube video ID here
+      videoPath: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      thumbnail: '/lovable-uploads/a17bbc11-dc41-4a80-b398-8d68f7bcb2bc.png'
     }
   ];
+
+  const renderVideo = (section: any) => {
+    // If YouTube ID is provided, use YouTube embed
+    if (section.youtubeId) {
+      return (
+        <iframe
+          className="w-full h-full rounded-2xl"
+          src={`https://www.youtube.com/embed/${section.youtubeId}`}
+          title={section.title}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      );
+    }
+
+    // Otherwise use regular video player
+    return (
+      <video 
+        className="w-full h-full object-cover rounded-2xl"
+        controls
+        poster={section.thumbnail}
+        onPlay={() => setPlayingVideo(section.id)}
+        onPause={() => setPlayingVideo(null)}
+        onError={(e) => {
+          console.log(`Video ${section.id} failed to load:`, e);
+          const placeholder = e.currentTarget.nextElementSibling as HTMLElement;
+          if (placeholder) {
+            e.currentTarget.style.display = 'none';
+            placeholder.style.display = 'flex';
+          }
+        }}
+      >
+        <source src={section.videoPath} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    );
+  };
 
   return (
     <section id="video-intro" className="py-20 bg-black/20 backdrop-blur-sm">
@@ -51,24 +93,7 @@ const VideoIntro = () => {
                 </p>
                 
                 <div className="relative aspect-video rounded-2xl overflow-hidden bg-gray-800/50 backdrop-blur-sm border border-white/10 shadow-xl">
-                  <video 
-                    className="w-full h-full object-cover"
-                    controls
-                    poster={section.thumbnail}
-                    onPlay={() => setPlayingVideo(section.id)}
-                    onPause={() => setPlayingVideo(null)}
-                    onError={(e) => {
-                      console.log(`Video ${section.id} failed to load:`, e);
-                      // Show placeholder if video fails to load
-                      e.currentTarget.style.display = 'none';
-                      const placeholder = e.currentTarget.nextElementSibling as HTMLElement;
-                      if (placeholder) placeholder.style.display = 'flex';
-                    }}
-                  >
-                    <source src={section.videoPath} type="video/mp4" />
-                    <source src={section.videoPath.replace('.mp4', '.webm')} type="video/webm" />
-                    Your browser does not support the video tag.
-                  </video>
+                  {renderVideo(section)}
                   
                   {/* Fallback placeholder */}
                   <div className="absolute inset-0 flex items-center justify-center" style={{display: 'none'}}>
@@ -82,7 +107,7 @@ const VideoIntro = () => {
                           <path d="M8 5v14l11-7z"/>
                         </svg>
                       </div>
-                      <p className="text-gray-400 text-sm">Video not found: {section.videoPath}</p>
+                      <p className="text-gray-400 text-sm">Video coming soon</p>
                     </div>
                   </div>
                 </div>
@@ -92,16 +117,12 @@ const VideoIntro = () => {
           
           <div className="mt-12 text-center">
             <div className="bg-gray-800/30 rounded-lg p-6 border border-white/10">
-              <h4 className="text-white font-semibold mb-2">Upload Instructions:</h4>
+              <h4 className="text-white font-semibold mb-2">Video Setup Options:</h4>
               <div className="text-gray-400 text-sm space-y-2">
-                <p>📁 Place your videos in the <code className="bg-gray-700 px-2 py-1 rounded">public</code> folder</p>
-                <p>📝 Name them exactly as:</p>
-                <div className="text-left max-w-md mx-auto">
-                  <p>• <code className="bg-gray-700 px-2 py-1 rounded text-xs">introduction-video.mp4</code></p>
-                  <p>• <code className="bg-gray-700 px-2 py-1 rounded text-xs">interview-video.mp4</code></p>
-                  <p>• <code className="bg-gray-700 px-2 py-1 rounded text-xs">feedback-video.mp4</code></p>
-                </div>
-                <p className="text-xs mt-3">💡 Tip: Add thumbnail images with same names ending in <code className="bg-gray-700 px-1 rounded">-thumbnail.jpg</code></p>
+                <p>🎬 <strong>Option 1:</strong> Upload videos to YouTube and add video IDs in code</p>
+                <p>🎥 <strong>Option 2:</strong> Use Google Drive/Dropbox public links</p>
+                <p>📱 <strong>Option 3:</strong> Record short videos on phone and use cloud storage</p>
+                <p className="text-xs mt-3 text-purple-400">💡 Currently showing demo videos - replace with your content!</p>
               </div>
             </div>
           </div>
