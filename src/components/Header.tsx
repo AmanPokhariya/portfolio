@@ -48,6 +48,12 @@ const Header = () => {
             >
               Videos
             </Link>
+            <Link 
+              to="/activities"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              Activities
+            </Link>
             <button 
               onClick={() => scrollToSection('about')}
               className="text-gray-300 hover:text-white transition-colors"
@@ -99,6 +105,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Videos
+              </Link>
+              <Link 
+                to="/activities"
+                className="text-gray-300 hover:text-white transition-colors text-left"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Activities
               </Link>
               <button 
                 onClick={() => scrollToSection('about')}
